@@ -58,12 +58,12 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise_token_auth'
 
-gem 'rubocop-rails', require: false
-
-gem 'rubocop-rspec', require: false
-
 group :development do
   gem 'annotate'
 end
 
-gem "pry-byebug"
+group :development, :test do
+  gem 'rubocop-rails'
+  gem 'rubocop-rspec'
+  gem "pry-byebug"
+end
