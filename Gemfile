@@ -66,4 +66,5 @@ group :development, :test do
   gem 'rubocop-rails'
   gem 'rubocop-rspec'
   gem "pry-byebug"
+  gem 'rubocop-performance'
 end
