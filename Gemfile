@@ -62,11 +62,11 @@ group :development do
 end
 
 group :development, :test do
+  gem "factory_bot_rails"
+  gem "faker"
   gem "pry-byebug"
+  gem "rspec-rails"
   gem "rubocop-performance"
   gem "rubocop-rails"
   gem "rubocop-rspec"
-  gem 'rspec-rails'
-  gem 'factory_bot_rails'
-  gem 'faker'
 end
