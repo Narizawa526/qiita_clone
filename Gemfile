@@ -59,6 +59,7 @@ gem "devise_token_auth"
 
 group :development do
   gem "annotate"
+  gem 'rails-erd'
 end
 
 group :development, :test do
