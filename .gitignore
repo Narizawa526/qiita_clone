@@ -1,5 +1,3 @@
-erd.pdf
-
 *.rbc
 capybara-*.html
 /db/*.sqlite3
@@ -69,6 +67,8 @@ yarn-debug.log*
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+erd.pdf
 
 /public/packs
 /public/packs-test
