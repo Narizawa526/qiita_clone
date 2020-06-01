@@ -1,3 +1,5 @@
+erd.pdf
+
 *.rbc
 capybara-*.html
 /db/*.sqlite3
