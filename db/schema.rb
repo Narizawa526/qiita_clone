@@ -56,7 +56,6 @@ ActiveRecord::Schema.define(version: 2020_05_28_090816) do
     t.string "nickname"
     t.string "image"
     t.string "email"
-    t.string "password"
     t.text "tokens"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
