@@ -1,6 +1,11 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
+
+  validates :email, :name, :encrypted_password, presence: true
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, {format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false}}
+  
   extend Devise::Models
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
