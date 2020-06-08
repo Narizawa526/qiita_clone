@@ -1,6 +1,8 @@
 FactoryBot.define do
   factory :article do
-    body { "MyString" }
-    title { "MyString" }
+    title { Faker::Lorem.sentence }
+    body { Faker::Lorem.paragraph_by_chars}
+    user_id { Faker::Internet.uuid }
+    user
   end
 end
