@@ -21,7 +21,6 @@ RSpec.describe Article, type: :model do
     let(:article){build(:article, body: nil)}
     it "投稿されない" do 
       article.valid?
-      binding.pry
       expect(article.errors.messages[:body]).to include "can't be blank"
     end
   end
