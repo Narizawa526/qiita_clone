@@ -2,20 +2,28 @@ require "rails_helper"
 
 RSpec.describe Comment, type: :model do
 
-  context "commentが指定されたとき" do
-    let(:comment){build(:comment)}
-    it "投稿される" do
-      expect(comment).to be_valid
+  describe "正常系のテスト" do
+  
+    context "bodyが指定されたとき" do
+      let(:comment){build(:comment)}
+
+      it "投稿できる" do
+        expect(comment).to be_valid
+      end
     end
+  
   end
 
-  context "commentが指定されていないとき" do
-    let(:comment){build(:comment, body: nil)}
-    it "投稿されない" do
-      comment.valid?
-      expect(comment.errors.messages[:body]).to include "can't be blank"
+  describe "異常系のテスト" do
+  
+    context "bodyが指定されていないとき" do
+      let(:comment){build(:comment, body: nil)}
+    
+      it "エラーする" do
+        comment.valid?
+        expect(comment.errors.messages[:body]).to include "can't be blank"
+      end
     end
+  
   end
-
-
 end
