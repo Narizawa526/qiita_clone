@@ -5,7 +5,7 @@ class User < ApplicationRecord
   extend Devise::Models
   include DeviseTokenAuth::Concerns::User
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
-  validates :email, { format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false } }
+  validates :email, { format: { with: VALID_EMAIL_REGEX } }
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

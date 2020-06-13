@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.describe User, type: :model do
   describe "正常系のテスト" do
     context "email,name,passwordを指定しているとき" do
-      let(:user) { create(:user) }
+      let(:user) { build(:user) }
 
       it "ユーザーを作成できる" do
         expect(user).to be_valid
@@ -33,10 +33,10 @@ RSpec.describe User, type: :model do
 
     context "同じemailの値が存在するとき" do
       before do
-        create(:user, email: "hiroakinomail@test.com")
+        build(:user, email: "narizawanomail@mail.com")
       end
 
-      let(:user) { build(:user, email: "hiroakinomail@test.com") }
+      let(:user) { build(:user, email: "narizawanomail@mail.com") }
 
       it "エラーする" do
         user.valid?
