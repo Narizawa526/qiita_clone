@@ -17,7 +17,7 @@ RSpec.describe User, type: :model do
 
       it "emailがブランクのときエラーする" do
         user.valid?
-        expect(user.errors.messages[:email]).to include "is invalid"
+        expect(user.errors.messages[:email]).to include "can't be blank"
       end
 
       it "nameがブランクのときエラーする" do
@@ -33,9 +33,9 @@ RSpec.describe User, type: :model do
 
     context "同じemailの値が存在するとき" do
       before do
-        build(:user, email: "narizawanomail@mail.com")
+        create(:user, email: "narizawanomail@mail.com")
       end
-
+      
       let(:user) { build(:user, email: "narizawanomail@mail.com") }
 
       it "エラーする" do
