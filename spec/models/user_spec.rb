@@ -35,7 +35,7 @@ RSpec.describe User, type: :model do
       before do
         create(:user, email: "narizawanomail@mail.com")
       end
-      
+
       let(:user) { build(:user, email: "narizawanomail@mail.com") }
 
       it "エラーする" do
