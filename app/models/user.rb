@@ -3,7 +3,6 @@
 class User < ApplicationRecord
   validates :name, :encrypted_password, presence: true
   extend Devise::Models
-  include DeviseTokenAuth::Concerns::User
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -12,4 +11,6 @@ class User < ApplicationRecord
   has_many :articles, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :article_likes, dependent: :destroy
+
+  include DeviseTokenAuth::Concerns::User
 end
