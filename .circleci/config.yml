@@ -1,4 +1,5 @@
 version: 2.1
+<<<<<<< HEAD
 executors:
   default_container:
     docker:
@@ -114,3 +115,19 @@ workflows:
       - rspec:
           requires:
             - bundle_dependencies
+=======
+orbs:
+  ruby: circleci/ruby@0.1.2 
+
+jobs:
+  build:
+    docker:
+      - image: circleci/ruby:2.6.3-stretch-node
+    executor: ruby/default
+    steps:
+      - checkout
+      - run:
+          name: Which bundler?
+          command: bundle -v
+      - ruby/bundle-install
+>>>>>>> 233e36b4fdc64b375422a61cf56b5ca07139e8ad
